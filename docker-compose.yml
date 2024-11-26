@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "5050:5050"
+    volumes:
+      - ./frontend:/usr/src/app
+    networks:
+      - time-network
+
+networks:
+  time-network:
+    driver: bridge
